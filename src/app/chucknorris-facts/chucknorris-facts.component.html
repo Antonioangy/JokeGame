@@ -1,0 +1,46 @@
+
+<div class="d-flex justify-content-end p-4">
+
+    <button (click)="getRandomJokes()" class="btn btn-primary">Random Joke</button>
+</div>
+
+
+<div style="text-align: center;">
+    <h1>Chuck Norris Jokes</h1>
+  
+    <div id="categories">
+      <h2>Categories</h2>
+      <div id="category-list" class="d-flex justify-content-center margin-top: 50px;">
+        <div *ngFor="let category of categories" (click)="getJokesByCategory(category)" class="m-2">{{ category }}</div>
+        
+      </div>
+    </div>
+  </div>
+    
+   
+
+  
+        
+ <!-- Contenuto da mostrare quando e' stata selezionata una categoria -->
+ 
+ 
+ 
+ <div style="text-align: center; margin-top: 50px;" >
+
+    <div>
+        <h2>battuta per categoria</h2>    
+        <div class="m-2">{{ filteredJokes }}</div>   
+     </div>
+</div>
+
+    
+<!-- Contenuto da mostrare quando isVisible è true -->
+
+<div style="text-align: center; margin-top: 50px;">
+
+    <div *ngIf="isVisible">
+        <h2>battuta random</h2>
+
+        <p >{{ randomJokes.value }}</p>
+    </div>
+</div>
